@@ -1,0 +1,45 @@
+-- Total Flights by Airline
+SELECT
+    airline,
+    COUNT(flight_number) AS total_flights
+FROM flights
+GROUP BY airline
+ORDER BY total_flights DESC;
+
+
+
+-- Average Arrival Delay by Airline
+SELECT
+    airline,
+    ROUND(AVG(arrival_delay), 2) AS avg_arrival_delay
+FROM flights
+GROUP BY airline
+ORDER BY avg_arrival_delay DESC;
+
+
+
+-- Average Departure Delay by Airline
+SELECT
+    airline,
+    ROUND(AVG(departure_delay), 2) AS avg_departure_delay
+FROM flights
+GROUP BY airline
+ORDER BY avg_departure_delay DESC;
+
+
+
+-- Cancellation Rate by Airline
+SELECT
+    airline,
+    ROUND(AVG(cancelled) * 100, 2) AS cancellation_rate
+FROM flights
+GROUP BY airline
+ORDER BY cancellation_rate DESC;
+
+-- Average Distance by Airline
+SELECT
+    airline,
+    ROUND(AVG(distance), 2) AS avg_distance
+FROM flights
+GROUP BY airline
+ORDER BY avg_distance DESC;
